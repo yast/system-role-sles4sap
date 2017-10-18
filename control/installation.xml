@@ -27,8 +27,10 @@ textdomain="control"
             <system_roles config:type="list">
               <system_role>
                   <id>sles4sap_role</id>
+                  <order config:type="integer">0100</order>
                   <partitioning>
                      <proposal_lvm config:type="boolean">true</proposal_lvm>
+                     <try_separate_home config:type="boolean">false</try_separate_home>
                   </partitioning>
                   <remove_modules config:type="list">
                      <remove_module>user_first</remove_module>
