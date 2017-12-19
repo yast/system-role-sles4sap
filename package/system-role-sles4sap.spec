@@ -35,7 +35,7 @@ BuildRequires:  yast2-installation-control >= 4.0.0
 
 Url:            https://github.com/yast/system-role-sles4sap
 AutoReqProv:    off
-Version:        15.0.2
+Version:        15.0.3
 Release:        0
 Summary:        Server Normal role definition
 License:        MIT
@@ -43,7 +43,7 @@ Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
 Provides:       installer_module_extension() = system-role-sles4sap
-Provides:       extension_for_product() = SLES4SAP
+Provides:       extension_for_product() = SLES_SAP
 
 %description
 Meta package for SLES4SAP role definition.
