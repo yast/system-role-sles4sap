@@ -7,4 +7,49 @@ textdomain="control"
 -->
 
     <textdomain>control</textdomain>
+    
+    <texts>
+      <sles4sap_role>
+        <!-- TRANSLATORS: a label for a system role -->
+        <label>SLES4SAP Mode</label>
+      </sles4sap_role>
+      <sles4sap_role_description>
+        <label>• The Partitioning and some other system parameters will be adapted for SAP product installation.
+• X server with GNOME, with Btrfs root (/) partition
+• No separate /home partition</label>
+      </sles4sap_role_description>
+    </texts>
+    
+    <update>
+      <system_roles>
+        <insert_system_roles config:type="list">
+          <insert_system_role>
+            <system_roles config:type="list">
+              <system_role>
+                  <id>sles4sap_role</id>
+                  <order config:type="integer">0100</order>
+                  <partitioning>
+                     <proposal_lvm config:type="boolean">true</proposal_lvm>
+                     <try_separate_home config:type="boolean">false</try_separate_home>
+                  </partitioning>
+                  <remove_modules config:type="list">
+                     <remove_module>user_first</remove_module>
+                  </remove_modules>
+                  <insert_modules config:type="list">
+                  <insert_module>
+                     <before>add-on</before>
+                     <modules config:type="list">
+                        <module>
+                           <label>Perform SAP Installation</label>
+                           <name>sap_start</name>
+                        </module>
+                     </modules>
+                  </insert_module>
+                  </insert_modules>
+               </system_role>
+            </system_roles>
+          </insert_system_role>
+        </insert_system_roles>
+      </system_roles>
+    </update>  
 </productDefines>
